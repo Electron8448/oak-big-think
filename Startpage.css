@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    gap: 200px;
+}
+
+.mini{
+    column-width: 40;
+}
+
+.mega{
+    column-width: 20;
+}
+
+.ultra{
+    background-image: "Untitled.png" ;
+
+}
