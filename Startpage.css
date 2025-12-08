@@ -15,3 +15,13 @@
     background-image: "Untitled.png" ;
 
 }
+
+.dark-wrapper {
+    background-color: rgb(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+.light-wrapper {
+    background-color: rgb(255, 255, 255, 0.4);
+    padding: 5px;
+}
