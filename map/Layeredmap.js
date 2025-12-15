@@ -1,17 +1,29 @@
-fetch("https://ukpowernetworks.opendatasoft.com/api/records/1.0/search/?dataset=ukpn-live-faults&rows=100")
-  .then(r => r.json())
-  .then(data => {
-    data.records.forEach(rec => {
-      if (!rec.fields.geopoint) return;
-      const [lat, lon] = rec.fields.geopoint;
+<head>
+     <link rel="icon" type="image/png" href="../Screenshot_2-12-2025_74546_ukpowernetworks.opendatasoft.com.png">
+    <meta charset="UTF - 8">
+    <meta name="viewport" content="width=device - width, initial - scale=1.0">
+    <style>
+body {
+  background-image: url('untitled.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed ;
+  background-size: cover;
+  background-clip: initial;
+}
 
-      L.marker([lat, lon])
-        .addTo(map)
-        .bindPopup(`
-          <strong>${rec.fields.incidentreference || "Fault"}</strong><br>
-          Reason: ${rec.fields.plannedincidentreason}<br>
-          Affected Postcode: ${rec.fields.postcodesaffected}<br>
-          Type: ${rec.fields.powercuttype}
-        `);
-    });
-  });
+
+.dark-wrapper {
+    background-color: rgb(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+</style>   
+</head> 
+    
+    
+    <title>Interactive map</title>
+<iframe src="https://ukpowernetworks.opendatasoft.com/explore/embed/dataset/ukpn-live-faults/custom/?dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6InVrcG4tbGl2ZS1mYXVsdHMiLCJvcHRpb25zIjp7fX0sImNoYXJ0cyI6W3siYWxpZ25Nb250aCI6dHJ1ZSwidHlwZSI6ImNvbHVtbiIsImZ1bmMiOiJBVkciLCJ5QXhpcyI6Im5vY2FsbHNyZXBvcnRlZCIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlLCJjb2xvciI6IiNGMThFMEQifV0sInhBeGlzIjoicG93ZXJjdXR0eXBlIiwibWF4cG9pbnRzIjo1MCwic29ydCI6IiJ9XSwidGltZXNjYWxlIjoiIiwiZGlzcGxheUxlZ2VuZCI6dHJ1ZSwiYWxpZ25Nb250aCI6dHJ1ZX0%3D&static=false&datasetcard=false" width=100% height=100% frameborder="0"></iframe><br>
+<div class="dark-wrapper">
+<p style="color: white;"><a style="color=: white;" href="../Startpage.html">Back</a> This map shows all the powercuts in the uk national power grid. This show how complex our powernetwork really is. This map is another reference to our grids complexity. </p>
+<h1 style="text-align: center; color: white;">Reporting Faults</h1>
+<p style="color: white;">If you ever get a powercut call  0800 6783 105 or go to https://www.ukpowernetworks.co.uk/power-cut the link is <a href="https://www.ukpowernetworks.co.uk/power-cut">here</a>
